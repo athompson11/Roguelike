@@ -4,9 +4,9 @@ project(Roguelike)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-include_directories("../headers")
+include_directories("headers")
 
-file(GLOB SOURCES "../src/*.cpp")
+file(GLOB SOURCES "src/*.cpp")
 add_executable(engineTest ${SOURCES})
 
 find_package(Curses REQUIRED)
