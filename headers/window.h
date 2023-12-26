@@ -21,6 +21,7 @@ class Window{
         public:
             void initWindow();
             ~Window();
+            WINDOW* getWindow();
     #endif
     #ifdef USE_SDL
         int dimensionX = 1280;
@@ -29,8 +30,10 @@ class Window{
         SDL_Surface* viewportSurface = nullptr;
         public:
             void initWindow();
+            SDL_Window* getWindow();
             ~Window();
     #endif
+
     
 };
 #endif

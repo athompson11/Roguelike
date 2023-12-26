@@ -8,7 +8,7 @@ class Renderer {
         Renderer(){};
         virtual void init();
         virtual void renderViewport(Viewport *viewport);
-        virtual void refreshWindow(Window *window);
+        virtual void refreshWindow();
         ~Renderer();
 };
 #endif

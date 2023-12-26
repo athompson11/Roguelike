@@ -5,9 +5,7 @@
 #include <stdexcept>
 void Renderer::init()
 {
-    
     this->window = new Window();
-    //Need to load spritesheet and create window
     this->window->initWindow();
 }
 void Renderer::refreshWindow(Window *window)
@@ -27,17 +25,26 @@ Renderer::~Renderer(){
 #include <ncurses.h>
 void Renderer::init()
 {
-
+    initscr();
+    keypad(stdscr, TRUE);
+    noecho();
+    start_color();
+    this->window = new Window();
+    this->window->initWindow();
+    box(this->window->getWindow(), 0, 0); // 0, 0 gives default characters for the vertical and horizontal lines
+    this->refreshWindow();
 }
-void Renderer::refreshWindow(Window *window)
+void Renderer::refreshWindow()
 {
-    
+    wrefresh(this->window->getWindow());
+    refresh();
 }
 void Renderer::renderViewport(Viewport *viewport)
 {
     
 }
 Renderer::~Renderer(){
-
+    delwin(this->window->getWindow());
+    endwin();
 }
 #endif
