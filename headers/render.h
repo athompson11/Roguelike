@@ -1,6 +1,6 @@
 #ifndef RENDERER_H
 #define RENDERER_H
-#include "./window.h"
+#include "window.h"
 class Renderer {
     protected:
         Window *window = nullptr;
@@ -9,5 +9,6 @@ class Renderer {
         virtual void init();
         virtual void renderViewport(Viewport *viewport);
         virtual void refreshWindow(Window *window);
+        ~Renderer();
 };
 #endif

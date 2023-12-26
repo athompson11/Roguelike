@@ -1,11 +1,12 @@
 #include "window.h"
+#include <stdexcept>
 #ifdef USE_SDL
 void Window::initWindow()
 {
     this->win = SDL_CreateWindow( "Engine Test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->dimensionX, this->dimensionY, SDL_WINDOW_SHOWN);
     if( this->win == NULL )
         {
-            throw std::exception(SDL_GetError());
+            throw std::runtime_error(SDL_GetError());
         }
     else{
         this->viewportSurface = SDL_GetWindowSurface(this->win);

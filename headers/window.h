@@ -23,7 +23,7 @@ class Window{
             ~Window();
     #endif
     #ifdef USE_SDL
-        int dimensionX = 1280
+        int dimensionX = 1280;
         int dimensionY = 720;
         SDL_Window *win = nullptr;
         SDL_Surface* viewportSurface = nullptr;

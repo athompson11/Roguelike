@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include <iostream> // Include for cout and endl
 #include "game.h"
-#include <exception>
+#include <stdexcept>
 using namespace std; // Correct namespace usage
 
 int main() {

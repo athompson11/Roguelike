@@ -1,7 +1,7 @@
 #ifndef MAP_H
 #define MAP_H
-#include "./tiles.h"
-#include "./rooms.h"
+#include "tiles.h"
+#include "rooms.h"
 #include <string>
 #include <algorithm>
 class Map {

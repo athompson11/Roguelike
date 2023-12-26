@@ -1,3 +1,4 @@
+/*
 #include "input.h"
 
 #ifdef USE_SDL
@@ -18,3 +19,4 @@ PlayerInput InputHandler::getInput()
     return 
 }
 #endif
+*/

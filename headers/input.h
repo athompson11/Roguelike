@@ -1,3 +1,4 @@
+/*
 #ifndef INPUT_H
 #define INPUT_H
 enum class PlayerInput{
@@ -33,3 +34,4 @@ class InputHandler {
 };
 
 #endif // INPUT_H
+*/

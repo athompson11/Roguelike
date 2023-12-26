@@ -2,7 +2,7 @@
 #include <stdexcept>
 #ifdef USE_SDL
 #include <SDL2/SDL.h>
-#include <exception>
+#include <stdexcept>
 void Renderer::init()
 {
     
@@ -18,8 +18,8 @@ void Renderer::renderViewport(Viewport *viewport)
 {
 
 }
-void ~Renderer(){
-    this->window->win->~Window();
+Renderer::~Renderer(){
+    this->window->~Window();
 }
 #endif
 
@@ -36,5 +36,8 @@ void Renderer::refreshWindow(Window *window)
 void Renderer::renderViewport(Viewport *viewport)
 {
     
+}
+Renderer::~Renderer(){
+
 }
 #endif
