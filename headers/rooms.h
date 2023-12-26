@@ -1,3 +1,5 @@
+#ifndef ROOM_H
+#define ROOM_H
 class Room {
     protected:
         std::string message = "";
@@ -12,3 +14,4 @@ class Room {
 
         virtual ~Room() {}
 };
+#endif

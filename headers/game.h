@@ -1,12 +1,20 @@
-#include "./player.h"
-#include "./window.h"
-class Game{
+#ifndef GAME_H
+#define GAME_H
+#include "player.h"
+#include "map.h"
+#include "render.h"
+
+class Game {
     protected:
         Player *player = nullptr;
-        Window *window = nullptr;
+        Renderer *renderer = nullptr;
+        Map *maps = nullptr;
+        Map *currentMap = nullptr;
     public:
-        Game(Player *player, Window *window)
-        : player(player), window(window){}
-
-        virtual ~Game() {}
-};
+        Game(Player *player, Renderer *renderer)
+        : player(player), renderer(renderer){};
+        Game(){};
+        void init();
+        void mainLoop();
+    };
+#endif
