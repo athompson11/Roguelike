@@ -13,7 +13,7 @@ void Window::initWindow()
         SDL_UpdateWindowSurface( this->win );
     }
 }
-void Window::~Window(){
+Window::~Window(){
     SDL_DestroyWindow(this->win);
 }
 #endif

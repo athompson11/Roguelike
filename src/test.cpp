@@ -1,10 +1,6 @@
 #include <ncurses.h>
 #include <iostream> // Include for cout and endl
-#include "tiles.h"
-#include "map.h"
-#include "rooms.h"
 #include "game.h"
-#include "render.h"
 #include <exception>
 using namespace std; // Correct namespace usage
 

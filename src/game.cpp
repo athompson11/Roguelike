@@ -1,7 +1,7 @@
 #include "game.h"
 #include "render.h"
 #include "player.h"
-#include "map"
+#include "map.h"
 #include <SDL2/SDL.h>
 void Game::init(){
     /*Need to fill the following:

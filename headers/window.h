@@ -24,7 +24,7 @@ class Window{
         SDL_Surface* viewportSurface = nullptr;
         public:
             void initWindow();
-            void ~Window();
+            ~Window();
     #endif
     
 };
