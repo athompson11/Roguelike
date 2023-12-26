@@ -1,11 +1,13 @@
+#ifndef TILE_H
+#define TILE_H
 #include <string>
-
 class Tile {
 protected:
     std::string tileID;
     std::string description;
     char symbol;
     bool isPassable;
+    bool isDirty = false;
 public:
     Tile(std::string id = "default", std::string desc = "You shouldn't be seeing this.", char sym = '*', bool isPassable = false)
         : tileID(id), description(desc), symbol(sym), isPassable(isPassable) {}
@@ -28,19 +30,7 @@ class Door : public Tile {
         bool isOpen;
     public:
         Door() : Tile("door", "A door", '+', false), isOpen(false) {}
-        Door(bool isOpen) : Tile("door", "A door", '+', true), isOpen(isOpen) {}
         virtual ~Door() {}
-        virtual void changeState() {
-            isOpen = !isOpen;
-            if (isOpen) {
-                symbol = '/';
-                this->tileID = "doorOpen";
-                isPassable = true;
-            } else {
-                symbol = '+';
-                this->tileID = "doorClose";
-                isPassable = false;
-            }
-        }
+        virtual void changeState();
 };
-
+#endif

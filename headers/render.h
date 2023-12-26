@@ -1,25 +1,14 @@
-#include "./window.h"
-#include "./viewport.h"
+#ifndef RENDERER_H
+#define RENDERER_H
+#include "window.h"
 class Renderer {
+    protected:
+        Window *window = nullptr;
     public:
-        virtual void renderViewport(Viewport *viewport){};
-        virtual void refreshWindow(Window *window){};
-
-        virtual ~Renderer() {}
+        Renderer(){};
+        virtual void init();
+        virtual void renderViewport(Viewport *viewport);
+        virtual void refreshWindow(Window *window);
+        ~Renderer();
 };
-
-
-
-/*
-void drawMap(WINDOW *main_win) {
-    for (int i = 0; i < size_y; i++) {
-        mvwprintw(main_win, i, 0, testMap[i]);
-    }
-    wrefresh(main_win);
-}
-
-void drawPlayer(WINDOW *main_win) {
-    mvwprintw(main_win, player_y, player_x, "@");
-    wrefresh(main_win);
-}
-*/
+#endif
