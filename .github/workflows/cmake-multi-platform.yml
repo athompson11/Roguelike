@@ -40,6 +40,8 @@ jobs:
             build_target: NCURSES
         exclude:
           - os: windows-latest
+            build_target: NCURSES
+          - os: windows-latest
             c_compiler: gcc
           - os: windows-latest
             c_compiler: clang
