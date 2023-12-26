@@ -1,7 +1,12 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 #include "viewport.h"
+#ifdef USE_SDL
 #include <SDL2/SDL.h>
+#endif
+#ifdef USE_NCURSES
+#include <ncurses.h>
+#endif
 
 class Window{
     protected:
@@ -15,7 +20,7 @@ class Window{
         WINDOW *win = nullptr;
         public:
             void initWindow();
-            void ~Window();
+            ~Window();
     #endif
     #ifdef USE_SDL
         int dimensionX = 1280
