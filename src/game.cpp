@@ -25,11 +25,11 @@ void Game::init(){
     #endif
     this->renderer = new Renderer();
     this->renderer->init();
-    this->rng = new RNG();
-}
+    }
 void Game::mainLoop(){
     this->currentMap = new Map();
     this->currentMap->generateMap();
+    this->renderer->refreshWindow(this->currentMap);
     #ifdef USE_NCURSES
     while(true) {
         int ch = getch(); // Get a character from the user

@@ -9,7 +9,6 @@ class Game {
         Renderer *renderer = nullptr;
         Map *maps = nullptr;
         Map *currentMap = nullptr;
-        RNG *rng = nullptr;
     public:
         Game(Renderer *renderer)
         : renderer(renderer){};

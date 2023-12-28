@@ -36,10 +36,16 @@ void Renderer::refreshWindow(Map *map)
 {
     for (int i = 0; i < map->getMapHeight(); ++i) {
         for (int j = 0; j < map->getMapWidth(); ++j) {
-            mvwaddch(this->window->getWindow(), i, j, map->getMapTile(i,j)->getSymbol());
+            Tile* tile = map->getMapTile(i, j);
+            if (tile == nullptr) {
+                // If the tile is null, just print a space character
+                mvwaddch(this->window->getWindow(), i, j, static_cast<chtype>(' '));
+            } else {
+                // If the tile is not null, print its symbol
+                mvwaddch(this->window->getWindow(), i, j, static_cast<chtype>(tile->getSymbol()));
+            }
         }
     }
-    refresh();
     wrefresh(this->window->getWindow());
 }
 Renderer::~Renderer(){
