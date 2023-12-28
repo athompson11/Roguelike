@@ -1,4 +1,5 @@
 #include "render.h"
+#include "map.h"
 #include <stdexcept>
 #ifdef USE_SDL
 #include <SDL2/SDL.h>
@@ -8,11 +9,7 @@ void Renderer::init()
     this->window = new Window();
     this->window->initWindow();
 }
-void Renderer::refreshWindow(Window *window)
-{
-
-}
-void Renderer::renderViewport(Viewport *viewport)
+void Renderer::refreshWindow()
 {
 
 }
@@ -25,23 +22,25 @@ Renderer::~Renderer(){
 #include <ncurses.h>
 void Renderer::init()
 {
-    initscr();
-    keypad(stdscr, TRUE);
-    noecho();
-    start_color();
     this->window = new Window();
     this->window->initWindow();
     box(this->window->getWindow(), 0, 0); // 0, 0 gives default characters for the vertical and horizontal lines
-    this->refreshWindow();
 }
+
 void Renderer::refreshWindow()
 {
-    wrefresh(this->window->getWindow());
     refresh();
+    wrefresh(this->window->getWindow());
 }
-void Renderer::renderViewport(Viewport *viewport)
+void Renderer::refreshWindow(Map *map)
 {
-    
+    for (int i = 0; i < map->getMapHeight(); ++i) {
+        for (int j = 0; j < map->getMapWidth(); ++j) {
+            mvwaddch(this->window->getWindow(), i, j, map->getMapTile(i,j)->getSymbol());
+        }
+    }
+    refresh();
+    wrefresh(this->window->getWindow());
 }
 Renderer::~Renderer(){
     delwin(this->window->getWindow());

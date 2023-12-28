@@ -15,6 +15,4 @@ int main() {
         std::cerr << "Caught exception: " << e.what() << std::endl;
         return 1; // Indicate error
     }
-
-    return 0;
 }

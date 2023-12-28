@@ -1,6 +1,5 @@
 #ifndef WINDOW_H
 #define WINDOW_H
-#include "viewport.h"
 #ifdef USE_SDL
 #include <SDL2/SDL.h>
 #endif
@@ -10,7 +9,6 @@
 
 class Window{
     protected:
-        Viewport *viewport = nullptr;
     private:
     #ifdef USE_NCURSES
         int dimensionX = 80;

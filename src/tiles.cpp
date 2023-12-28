@@ -1,5 +1,4 @@
 #include "tiles.h"
-#include "tiles.h"
 
 void Door::changeState() {
             isOpen = !isOpen;
