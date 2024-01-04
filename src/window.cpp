@@ -14,10 +14,22 @@ void Window::initWindow()
         SDL_UpdateWindowSurface( this->win );
     }
 }
+SDL_Window* Window::getWindow(){
+    return this->win;
 Window::~Window(){
     SDL_DestroyWindow(this->win);
 }
 #endif
 #ifdef USE_NCURSES
+#include <ncurses.h>
+void Window::initWindow()
+{
+    this->win = newwin(this->dimensionY, this->dimensionX, 0, 0);
+}
+WINDOW* Window::getWindow(){
+    return this->win;
+}
+Window::~Window(){
 
+}
 #endif
