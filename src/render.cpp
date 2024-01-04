@@ -13,6 +13,9 @@ void Renderer::refreshWindow()
 {
 
 }
+void Renderer::refreshWindow(Window *window){
+    
+}
 Renderer::~Renderer(){
     this->window->~Window();
 }
